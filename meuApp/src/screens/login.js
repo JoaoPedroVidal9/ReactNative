@@ -63,12 +63,43 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
   },
-  texto: {
-    fontWeight: "bold",
-    fontSize: 30,
-  },
   titulo: {
     fontWeight: "bold",
     fontSize: 40,
   },
+  box1: {
+    width: 200,
+    height: 200,
+    backgroundColor: "#ff0000",
+  },
+  box2: {
+    width: 200,
+    height: 200,
+    backgroundColor: "#00ff00",
+  },
+  box3: {
+    width: 200,
+    height: 200,
+    backgroundColor: "#0000ff",
+  },
+  box4: {
+    width: 200,
+    height: 200,
+    backgroundColor: "#000000",
+    color:'ffffff'
+  },
+  row:{
+    flexDirection:'row'
+  },
+  texto:{
+    fontWeight:'bold',
+    fontSize:30
+  },
+  inputi:{
+    borderWidth:3,
+    borderColor:'black',
+    width:'80%',
+    padding:10,
+    marginVertical:10
+  }
 });

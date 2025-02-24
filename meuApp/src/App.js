@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
-import Login from "./screens/login";
+import Cadastro from "./screens/cadastro";
 
 export default function App() {
+
+  
+
   return (
     <View style={styles.container}>
-      <Login></Login>
+      <Cadastro></Cadastro>
     </View>
   );
 }
@@ -46,8 +49,8 @@ const styles = StyleSheet.create({
     fontSize:30
   },
   inputi:{
-    borderWidth:1,
-    borderColor:'lavander',
+    borderWidth:3,
+    borderColor:'black',
     width:'80%',
     padding:10,
     marginVertical:10
