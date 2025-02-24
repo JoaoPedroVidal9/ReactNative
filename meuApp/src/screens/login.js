@@ -17,15 +17,16 @@ export default function Login() {
 
   async function handleLogin() {
     await api.postLogin(user).then(
-        (response) => {
-            Alert.alert(response.data.message);
-          console.log(response.data.message);
-        },
-        (error) => {
-          console.log(error.message);
-        }
-      );
-    }
+      (response) => {
+        Alert.alert("Bem Vindo!", response.data.message);
+        console.log(response.data.message);
+      },
+      (error) => {
+        Alert.alert("Erro",error.response.data.error);
+        console.log(error.response.error.message);
+      }
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -47,8 +48,7 @@ export default function Login() {
           setUser({ ...user, password: value });
         }}
       />
-      <TouchableOpacity
-       onPress={handleLogin}>
+      <TouchableOpacity onPress={handleLogin}>
         <Text>Clique Aqui Para Login-in</Text>
       </TouchableOpacity>
     </View>
