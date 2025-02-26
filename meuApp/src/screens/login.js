@@ -6,10 +6,11 @@ import {
   TouchableOpacity,
   Alert,
   StyleSheet,
+  Button,
 } from "react-native";
 import api from "../axios/axios";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -20,6 +21,7 @@ export default function Login() {
       (response) => {
         Alert.alert("Bem Vindo!", response.data.message);
         console.log(response.data.message);
+
       },
       (error) => {
         Alert.alert("Erro",error.response.data.error);
@@ -48,9 +50,12 @@ export default function Login() {
           setUser({ ...user, password: value });
         }}
       />
-      <TouchableOpacity onPress={handleLogin}>
+      <TouchableOpacity onPress={handleLogin} style={styles.botao}>
         <Text>Clique Aqui Para Login-in</Text>
       </TouchableOpacity>
+
+      <Button title='Cadastro' onPress={()=>navigation.navigate('Cadastro')}
+      />
     </View>
   );
 }
@@ -101,5 +106,12 @@ const styles = StyleSheet.create({
     width:'80%',
     padding:10,
     marginVertical:10
-  }
+  },
+  botao:{
+    borderWidth:3,
+    backgroundColor:'green',
+    width:'80%',
+    padding:10,
+    marginVertical:10
+}
 });
